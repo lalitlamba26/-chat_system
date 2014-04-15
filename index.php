@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <html>
-<title>messenger</title>
+<title>Lalit Messenger</title>
 <head> 
 <script src="//code.jquery.com/jquery-1.7.2.min.js"></script>
 <script>
