@@ -4,7 +4,7 @@
 <head> 
 <script src="//code.jquery.com/jquery-1.7.2.min.js"></script>
 <script>
-$(function(){     // jquery 
+$(function(){   
 
         $("#retype_password").keyup(function(){
         	if($("#password").val()==$("#retype_password").val())

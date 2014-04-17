@@ -10,6 +10,22 @@
 <html>
 <title> chatting box </title>
 <style type="text/css">
+	#invite_box{
+		position: absolute;
+		right:200px;
+		top:380px;
+
+	}
+	#invite_button{
+		position: absolute;
+		right: 100px;
+		top:380px;
+	}
+	#logout_button{
+		position:absolute;
+		right:100px;
+		top:5px;
+	}
 	#enter_text{
 		resize:none;
 	}
@@ -17,7 +33,7 @@
 		border:1px solid;
 		border-radius:5px;
 		height: 50%;
-		width: 20%;
+		width: 70%;
 		overflow:auto;
 	}
 
@@ -27,16 +43,11 @@
 		height: 50%;
 		width: 20%;
 		position:absolute;
-        right:50px;
-        top:50px;
+        right:100px;
+        top:20px;
         overflow:auto;
 	}
-	#with{
-		position: absolute;
-		right:1050px;
-		top:50px;
-
-	}
+	
 </style>
 <head> 
 <script src="//code.jquery.com/jquery-1.7.2.min.js"></script>
@@ -76,9 +87,8 @@ $(function(){
 			success : function (data){
 				if (data) {
 
-
-					$( "#chat_box" ).append(data+"<br>");
-					
+					$("#enter_text").attr("");
+				
 				}                  
 			},
 			failure: function(){
@@ -221,7 +231,7 @@ function ajaxcall(){
 		data: {friend_id:glob},           
 		success : function (data){
 			if (data) {
-				$('#chat_box').html(data); 
+				$('#chat_box').html(data+'<br>'); 
 				}              
 		},
 		failure: function(){
@@ -252,14 +262,15 @@ function ajaxcall(){
 	 		}?>
 		
 		CHAT BOX: <div name="chat_box" id="chat_box"></div>
-		ENTER TEXT: <textarea rows="3" cols="40" name="enter_text" id="enter_text">jfdjfsd </textarea>
+		
+
+		ENTER MESSAGE: <textarea rows="3" cols="40" name="enter_text" id="enter_text" placeholder="click on chat button and enter message here"></textarea>
 		<input type="button" id="send_button" value="send">
 
 		<div name="friends" id="friends"></div>
 
-		<div name="with" id="with"></div>
-
-		<input type="text" name="invite_box" id="invite_box">
+		
+		<input type="text" name="invite_box" id="invite_box" placeholder="enter username to invite">
 		<input type="button" name="invite button" id="invite_button" value= "invite person">
 
 		
